@@ -45,5 +45,25 @@ exports.updateCat = asyncHandler(async (req, res) => {
         runValidators: true,
     })
 
-    res.send(cat)
+    res.status(200).json({
+        success: true,
+        data: cat
+    })
+})
+
+exports.deleteCat = asyncHandler(async (req, res) => {
+    const catID = req.params.id
+
+    const cat = await Cat.findById(catID)
+    if (!cat) {
+        res.status(404)
+        throw new Error('There is no cat with this ID')
+    }
+
+    await cat.delete();
+
+    res.status(200).json({
+        success: true,
+        data: {}
+    })
 })
