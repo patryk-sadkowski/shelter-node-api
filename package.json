@@ -1,0 +1,19 @@
+{
+  "name": "shelter-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patryk-sadkowski/shelter-node-api.git"
+  },
+  "author": "Patryk Sadkowski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/patryk-sadkowski/shelter-node-api/issues"
+  },
+  "homepage": "https://github.com/patryk-sadkowski/shelter-node-api#readme"
+}
