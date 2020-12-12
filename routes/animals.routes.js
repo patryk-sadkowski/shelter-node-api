@@ -1,5 +1,4 @@
 const { Router } = require('express');
-const { addCat, getCats, getCat, updateCat, deleteCat } = require('../controllers/cats.controllers');
 
 const catsRoutes = require('./cats.routes')
 

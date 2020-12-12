@@ -1,9 +1,9 @@
-const Cat = require('../models/animals.model');
+const Animal = require('../models/animals.model');
 const asyncHandler = require('express-async-handler')
-
+const throwError = require('../utils/throwError')
 
 exports.getCats = asyncHandler(async (req, res) => {
-    const cats = await Cat.find();
+    const cats = await Animal.find({ type: "Cat" });
     res.status(200).json({
         success: true,
         size: cats.length,
@@ -12,19 +12,23 @@ exports.getCats = asyncHandler(async (req, res) => {
 })
 
 exports.addCat = asyncHandler(async (req, res) => {
-    const cat = await Cat.create(req.body)
+    req.body.type = "Cat"
+    const cat = await Animal.create(req.body)
     res.send(cat)
 })
 
 exports.getCat = asyncHandler(async (req, res) => {
     const catID = req.params.id
 
-    const cat = await Cat.findById(catID)
+    const cat = await Animal.find({
+        _id: catID,
+        type: "Cat"
+    })
 
-    if (!cat) {
-        res.status(404)
-        throw new Error('There is no cat with this ID')
-    }
+
+    if (!cat)
+        return throwError('There is no cat with this ID', res, 404)
+
     res.status(200).json({
         success: true,
         data: cat
@@ -34,11 +38,14 @@ exports.getCat = asyncHandler(async (req, res) => {
 exports.updateCat = asyncHandler(async (req, res) => {
     const catID = req.params.id
 
-    const cat = await Cat.findById(catID)
-    if (!cat) {
-        res.status(404)
-        throw new Error('There is no cat with this ID')
-    }
+    const cat = await Animal.find({
+        _id: catID,
+        type: "Cat"
+    })
+
+    if (!cat)
+        return throwError('There is no cat with this ID', res, 404)
+
 
     await Cat.findByIdAndUpdate(catID, req.body, {
         new: true,
@@ -54,11 +61,14 @@ exports.updateCat = asyncHandler(async (req, res) => {
 exports.deleteCat = asyncHandler(async (req, res) => {
     const catID = req.params.id
 
-    const cat = await Cat.findById(catID)
-    if (!cat) {
-        res.status(404)
-        throw new Error('There is no cat with this ID')
-    }
+    const cat = await Animal.find({
+        _id: catID,
+        type: "Cat"
+    })
+
+    if (!cat)
+        return throwError('There is no cat with this ID', res, 404)
+
 
     await cat.delete();
 

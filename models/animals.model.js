@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const catSchema = new mongoose.Schema({
+const animalSchema = new mongoose.Schema({
     type: {
         type: String,
         enum: ['Cat', 'Dog'],
@@ -37,5 +37,5 @@ const catSchema = new mongoose.Schema({
     timestamps: true,
 })
 
-const Cat = mongoose.model('Cats', catSchema)
-module.exports = Cat
+const Animal = mongoose.model('Animals', animalSchema)
+module.exports = Animal
