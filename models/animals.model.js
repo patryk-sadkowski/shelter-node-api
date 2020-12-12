@@ -1,6 +1,11 @@
 const mongoose = require('mongoose')
 
 const catSchema = new mongoose.Schema({
+    type: {
+        type: String,
+        enum: ['Cat', 'Dog'],
+        required: true
+    },
     race: {
         type: String,
         required: true,

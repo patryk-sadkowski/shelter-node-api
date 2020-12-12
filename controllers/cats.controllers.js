@@ -1,4 +1,4 @@
-const Cat = require('../models/cats.model');
+const Cat = require('../models/animals.model');
 const asyncHandler = require('express-async-handler')
 
 

@@ -12,15 +12,16 @@ const { notFound, errorHandler } = require('./middlewares/error.middlewares')
 
 
 // Routes imports
-const catsRoutes = require('./routes/cats.routes')
+const catsRoutes = require('./routes/animals.routes')
 
 // APP instance init
 const app = express()
 
-mongoose.set('useFindAndModify', false);
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true
 }, console.log(`Database is ON`.green.inverse.bold))
 
 // Middlewares
@@ -29,7 +30,7 @@ app.use(morgan('tiny'))
 app.use(express.json())
 
 // Routes INIT
-app.use('/api/v1/cats', catsRoutes)
+app.use('/api/v1/animals', catsRoutes)
 
 
 app.use(notFound)
