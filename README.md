@@ -17,3 +17,4 @@
 
 ### Routes
 * `Method:GET Route: /api/v1/animals`
+Give you list list of all animals
