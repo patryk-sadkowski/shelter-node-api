@@ -13,4 +13,4 @@
     * **Street***
 * **Photos** Arrays of photos links
 
-/* - Required
+'*' - Required
