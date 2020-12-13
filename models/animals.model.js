@@ -6,6 +6,10 @@ const animalSchema = new mongoose.Schema({
         enum: ['Cat', 'Dog'],
         required: true
     },
+    name: {
+        type: String,
+        required: true,
+    },
     race: {
         type: String,
         required: true,
@@ -32,6 +36,9 @@ const animalSchema = new mongoose.Schema({
             type: String,
             required: true,
         }
+    },
+    photos: {
+        type: Array,
     }
 }, {
     timestamps: true,

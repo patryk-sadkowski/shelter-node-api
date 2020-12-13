@@ -47,7 +47,7 @@ exports.updateCat = asyncHandler(async (req, res) => {
         return throwError('There is no cat with this ID', res, 404)
 
 
-    await Cat.findByIdAndUpdate(catID, req.body, {
+    await Animal.findByIdAndUpdate(catID, req.body, {
         new: true,
         runValidators: true,
     })
