@@ -23,17 +23,15 @@
     Gives you animal of specific id
 
 #### Cats
-* `Method:GET Route: /api/v1/animals/cats`
-    Gives you list of all cats
-* `Method:GET Route: /api/v1/animals/cats/:id`
-    Gives you cat of specific id
-* `Method:POST Route: /api/v1/animals/cats`
-    Adds new cat to the collection
+* `Method:GET Route: /api/v1/animals/cats`      Gives you list of all cats
+* `Method:GET Route: /api/v1/animals/cats/:id`  Gives you cat of specific id
+* `Method:POST Route: /api/v1/animals/cats`     Adds new cat to the collection
 Example of request body
 ```
 {
     "race": "European",
     "age": "30",
+    "name": "Tony,
     "sex": "Female",
     "weight": 3000,
     "placeOfFound": {
