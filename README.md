@@ -49,6 +49,11 @@
 }
 ```
 
+#### Uploads
+#### Dogs
+* `Method:POST Route: /api/v1/uploads`          Uploads images
+* `Method:POST Route: /api/v1/uploads`          Uploads images for animal wih specific id
+
 
 
 
