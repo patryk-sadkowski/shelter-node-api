@@ -14,3 +14,6 @@
 * **Photos** Arrays of photos links
 
 '*' - Required
+
+### Routes
+* `Method:GET Route: /api/v1/animals`
