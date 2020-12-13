@@ -33,7 +33,6 @@
 #### DOGS
 * `Method:GET Route: /api/v1/animals/dogs`      Gives you list of all dogs
 * `Method:POST Route: /api/v1/animals/dogs`     Adds new dog to the collection
-* 
 * `Method:GET Route: /api/v1/animals/dogs/:id`  Gives you dog of specific id
 * `Method:PUT Route: /api/v1/animals/dogs/:id`  Updates dog with specific id
 * `Method:DELETE Route: /api/v1/animals/dogs/:id`  Deletes dog with specific id
